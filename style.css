@@ -270,6 +270,28 @@ hr {
     height: 400px;   /* smaller height for tablets */
   }
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;       /* keep side-by-side */
+    align-items: center;       /* vertically center */
+    text-align: left;          /* keep text aligned */
+  }
+
+  .header-left-side {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .header-right-side {
+    flex-shrink: 0;            /* prevent image shrinking */
+    margin-top: 0;
+  }
+
+  .header-right-side img {
+    width: 150px;              /* smaller image for mobile */
+    height: 150px;
+  }
+}
 
 @media (max-width: 480px) {
   #resume iframe {
