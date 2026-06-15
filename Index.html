@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio Using HTML & CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="header-left-side">
+        <h1>
+  Hello Everyone,<br />
+  JOSHAN&nbsp;V&nbsp;L
+</h1>
+        <h2>UI/UX DESIGNER & FRONT-END DEVELOPER</h2>
+        <p>
+          Hi, I'm Joshan!
+I’m a passionate UI/UX designer and front-end developer who thrives at the intersection of creativity and technology. My mission is to design intuitive, user-centered experiences and bring them to life with clean, responsive code. With a strong foundation in design thinking and modern web technologies, I transform ideas into engaging digital products.<br/>
+        </p>
+          </div>
+      <nav class="topnav">
+    <a class="resp-btn" href="#about">ABOUT</a>
+    <a class="resp-btn" href="#skills">SKILLS</a>
+    <a class="resp-btn" href="#tools">TOOLS</a>
+    <a class="resp-btn" href="#projects">PROJECTS</a>
+    <a class="resp-btn" href="#contact">CONTACT</a>
+    <a class="resp-btn" href="#resume">RESUME</a>
+    </nav>
+    <div class="main-section">
+  <section id="about" class="section">
+    <hr />
+    <h1>ABOUT</h1>
+    <p>
+      I am a dedicated and enthusiastic Computer Science Engineering student with a passion for front-end development and modern web technologies. My journey into the world of coding began during my first year of college, where I discovered the power of transforming ideas into engaging user interfaces.
+    </p>
+  </section>
+
+  <hr />
+
+  <section id="skills" class="section">
+    <h1>SKILLS</h1>
+    <ul>
+      <li>User Research</li>
+      <li>Wireframing</li>
+      <li>Prototyping</li>
+      <li>Visual Design</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <section id="tools" class="section">
+    <h1>TOOLS</h1>
+    <ul>
+      <li>Figma</li>
+      <li>Adobe XD</li>
+      <li>Canva</li>
+      <li>Visual Studio Code</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <section id="projects" class="section">
+    <h1>PROJECTS</h1>
+    <p>
+      Smart Bike Parking System</p>
+     <p> Tool Used: Figma
+</p>
+   <p> Description: The Smart Bike Parking System is a user-friendly application designed to streamline the process of finding and reserving bike parking spaces in urban areas. It provides real-time information on available parking spots, allowing users to easily locate and secure a parking space for their bikes. The system incorporates features such as GPS navigation, reservation management, and payment processing, making it a convenient solution for cyclists in busy cities.</p>
+  </section>
+
+  <hr />
+
+<section id="contact" class="section">
+  <h1>CONTACT</h1>
+  <p>
+    <i class="fas fa-envelope"></i> 
+    Mail: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joshanvl2007@gmail.com" target="_blank">
+      joshanvl2007@gmail.com
+    </a><br>
+
+    <i class="fas fa-phone"></i> 
+    Phone: <a href="tel:+919500468392">+91 9500468392</a><br>
+
+    <i class="fab fa-whatsapp"></i> 
+    WhatsApp: <a href="https://wa.me/919500468392" target="_blank">
+      Chat on WhatsApp
+    </a><br>
+
+    <i class="fab fa-linkedin"></i> 
+    LinkedIn: <a href="https://www.linkedin.com/in/joshan-v-l-b0a275378" target="_blank">
+      linkedin.com/in/joshan-v-l-b0a275378
+    </a>
+  </p>
+</section>
+  <hr />
+  <section id="resume" class="section">
+  <h1>RESUME</h1>
+  <a href="Resume.pdf" download class="btn">Download Resume</a>
+  <iframe src="Resume.pdf" width="100%" height="600px" style="border:none;"></iframe>
+</section>
+
+<hr />
+</div>
+    <div class="header-right-side">
+        <img src="./resume photo.jpeg" alt="img"/>
+      </div>
+    </header>
+    <script>
+  // Select all nav links
+  const navLinks = document.querySelectorAll('.topnav a');
+
+  // Function to update active link on scroll
+  window.addEventListener('scroll', () => {
+    let current = "";
+
+    // Loop through sections
+    document.querySelectorAll("section").forEach(section => {
+      const sectionTop = section.offsetTop - 60; // adjust for header height
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    // Remove active class from all links, add to current
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Smooth scroll effect when clicking nav links
+  navLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+</script>
+
+  </body>
+</html>
